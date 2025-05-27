@@ -1,0 +1,405 @@
+<!--- Done --->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Messages - Sami_Sparklez</title>
+  <link rel="icon" type="image/x-icon" href="/images/angelheart.png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #fef6ff;
+      margin: 0;
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+
+    * {
+      cursor: url('https://www.rw-designer.com/cursor-view/94536.png'), default
+    }
+    
+    .container {
+      display: flex;
+      width: 700px;
+      height: 550px;
+      box-shadow: 0 0 25px #ffcafc;
+      border-radius: 15px;
+      background: white;
+    }
+
+    /* LEFT SIDE - DM LIST + Back to Profile */
+    .dm-list {
+      width: 180px;
+      border-right: 2px solid #ffc0f0;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+
+    #backBtn {
+      background-color: #ffcafc;
+      border: none;
+      padding: 10px;
+      border-radius: 15px;
+      cursor: pointer;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #770047;
+      transition: background-color 0.3s;
+      cursor: url('https://www.rw-designer.com/cursor-view/94545.png'), pointer;
+    }
+
+    #backBtn:hover {
+      background-color: #ffc0f0;
+      cursor: url('https://www.rw-designer.com/cursor-view/94545.png'), pointer;
+    }
+
+    .dm-user {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4px;
+      padding: 10px;
+      border-radius: 15px;
+      cursor: pointer;
+      background: #ffdef9;
+      font-weight: 700;
+      font-size: 13px;
+      color: #770047;
+      user-select: none;
+      box-shadow: inset 0 0 5px #ff9ae8;
+      cursor: url('https://www.rw-designer.com/cursor-view/94545.png'), pointer;
+    }
+
+    .dm-user:hover {
+      background: #ffc0f0;
+    }
+
+    .user-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    /* RIGHT SIDE - Chat Area */
+    .chat-area {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .chat-log {
+      flex-grow: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 15px;
+      max-height: 430px;
+    }
+
+    .bubble {
+      padding: 11px 18px;
+      border-radius: 20px;
+      max-width: 75%;
+      line-height: 1.4;
+      display: inline-block;
+      font-size: 15px;
+      letter-spacing: 0.02em;
+    }
+
+    .friend {
+      background-color: #d8ffce;
+      align-self: flex-start;
+      color: #2e4a0a;
+      box-shadow: 0 1px 6px #b0d279aa;
+    }
+
+    .user {
+      background-color: #ffd9ef;
+      align-self: flex-end;
+      color: #770047;
+      text-align: right;
+      box-shadow: 0 1px 6px #e07abfaa;
+    }
+
+    .options {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .option-btn {
+      background-color: #ffcafc;
+      border: none;
+      border-radius: 15px;
+      padding: 11px 18px;
+      font-weight: 600;
+      cursor: pointer;
+      flex: 1 1 48%;
+      color: #770047;
+      box-shadow: 0 2px 5px #ff9ae8aa;
+      transition: background-color 0.3s;
+      letter-spacing: 0.03em;
+      cursor: url('https://www.rw-designer.com/cursor-view/94545.png'), pointer;
+    }
+
+    .option-btn:hover {
+      background-color: #ffc0f0;
+    }
+
+    .input-area {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      align-items: center;
+    }
+    
+    .typing-indicator {
+      font-style: italic;
+      font-size: 14px;
+      color: #888;
+      margin-left: 10px;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 0.3;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0.3;
+      }
+    }
+
+    #messageInput {
+      flex-grow: 1;
+      border: 2px solid #ffcafc;
+      border-radius: 20px;
+      padding: 11px 15px;
+      font-size: 15px;
+      color: #770047;
+      letter-spacing: 0.03em;
+      background-color: #fff0f8;
+      cursor: url('https://www.rw-designer.com/cursor-view/94538.png'), text;
+    }
+
+    #messageInput:disabled {
+      color: #770047aa;
+      background-color: #fff0f855;
+      cursor: url('https://www.rw-designer.com/cursor-view/94546.png'), not-allowed;
+    }
+
+    #sendBtn {
+      background-color: #ffcafc;
+      border: none;
+      border-radius: 20px;
+      padding: 11px 20px;
+      font-weight: 700;
+      cursor: pointer;
+      color: #770047;
+      box-shadow: 0 2px 5px #ff9ae8aa;
+      transition: background-color 0.3s;
+      cursor: url('https://www.rw-designer.com/cursor-view/94545.png'), pointer;
+    }
+
+    #sendBtn:hover {
+      background-color: #ffc0f0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="dm-list">
+      <button id="backBtn" onclick="goBack()">← Back to Profile</button>
+      <div class="dm-user" title="Sami_Sparklez">
+        <img src="images/profile_picture.png" class="user-avatar"> Sami_Sparklez
+      </div>
+    </div>
+
+    <div class="chat-area">
+      <div class="chat-log" id="chat-log">
+        <div class="bubble friend">hii &lt;3 thanks 4 the follow!!</div>
+      </div>
+
+      <div class="options" id="options">
+        <button class="option-btn" onclick="handleChoice('option1')">np!! i luv ur blogz! </button>
+        <button class="option-btn" onclick="handleChoice('option2')">HAII!! NP GRL! :3</button>
+      </div>
+
+      <audio id="sendAudio" src="audio/message-sent.mp3"> </audio>
+      <audio id="receiveAudio" src="audio/message-received.mp3"> </audio>
+
+      <div class="input-area">
+        <input type="text" id="messageInput" placeholder="type a message but don’t actually type lol" disabled />
+        <button id="sendBtn" onclick="sendFromInput()" disabled>Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const chatLog = document.getElementById('chat-log');
+    const optionsDiv = document.getElementById('options');
+    const messageInput = document.getElementById('messageInput');
+    const sendBtn = document.getElementById('sendBtn');
+
+    const convo = {
+      start: {
+        friendMsg: "hii <3 thanks 4 the follow!!",
+        options: {
+          option1: {
+            userMsg: "np!! i luv ur blogz ><!",
+            friendMsg: "stooopp tysm cutiee! lets talk mree :3",
+            nextOptions: {
+              option1a: {
+                userMsg: "i see u like avril? wuts ur fav song???",
+                friendMsg: "like?? i LOVE HERR. my fav icon! i acc have 2 fav songs since i can't choose one >< Complicated nd wut the hell :3",
+                nextOptions: null,
+              },
+              option1b: {
+                userMsg: "im soooo boredd;--;",
+                friendMsg: "then u btter start searching an ap research topic :v",
+                nextOptions: null,
+              },
+            },
+          },
+          option2: {
+            userMsg: "HAII!! NP GRL! :3",
+            friendMsg: "<333",
+            nextOptions: {
+              option2a: {
+                userMsg: "any tips u wanna share? >_>",
+                friendMsg: "GURL! its all in the blog! lolz",
+                nextOptions: null,
+              },
+              option2b: {
+                userMsg: "sooo u wanna tell me all the deets bout ap researchh?",
+                friendMsg: "yasss its in the blogs sista, they tell u everytjing u need!",
+                nextOptions: null,
+              },
+            },
+          },
+        },
+      },
+    };
+
+    let currentNode = convo.start;
+
+    function renderOptions(options) {
+      if (!options) {
+        optionsDiv.innerHTML = '';
+        messageInput.disabled = false;
+        sendBtn.disabled = false;
+        return;
+      }
+      optionsDiv.innerHTML = '';
+      messageInput.disabled = true;
+      sendBtn.disabled = true;
+      for (const key in options) {
+        const btn = document.createElement('button');
+        btn.textContent = options[key].userMsg;
+        btn.className = 'option-btn';
+        btn.onclick = () => handleChoice(key);
+        optionsDiv.appendChild(btn);
+      }
+    }
+
+    function handleChoice(choice) {
+      // Add user bubble
+      const userBubble = document.createElement('div');
+      userBubble.className = 'bubble user';
+      userBubble.textContent = currentNode.options[choice].userMsg;
+      chatLog.appendChild(userBubble);
+      chatLog.scrollTop = chatLog.scrollHeight;
+
+      // Play send sound
+      document.getElementById('sendAudio').play();
+
+      // Typing animation
+      const typingIndicator = document.createElement('div');
+      typingIndicator.className = 'typing-indicator';
+      typingIndicator.textContent = 'Sami_Sparklez is typing...';
+      chatLog.appendChild(typingIndicator);
+      chatLog.scrollTop = chatLog.scrollHeight;
+
+      // After delay, replace with real message
+      setTimeout(() => {
+        chatLog.removeChild(typingIndicator); // Remove the typing animation
+
+        const friendBubble = document.createElement('div');
+        friendBubble.className = 'bubble friend';
+        friendBubble.textContent = currentNode.options[choice].friendMsg;
+        chatLog.appendChild(friendBubble);
+        chatLog.scrollTop = chatLog.scrollHeight;
+
+        // Play receive sound
+        document.getElementById('receiveAudio').play();
+
+        // Update currentNode
+        currentNode = {
+          options: currentNode.options[choice].nextOptions,
+        };
+        renderOptions(currentNode.options);
+      }, 1200); // delay in ms
+    }
+
+    function selectResponse(button, messageText, responseText) {
+      const userMessage = createMessage(messageText, 'sent');
+      const botMessage = createMessage(responseText, 'received');
+      const audio = new Audio('audio/message-sent.mp3');
+      const responseAudio = new Audio('audio/message-received.mp3');
+
+      // Add the new messages to the messages container
+      const messagesContainer = document.querySelector('.messages');
+      messagesContainer.appendChild(userMessage);
+      messagesContainer.appendChild(botMessage);
+
+      // Scroll to bottom
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+      // Play sounds
+      audio.play();
+      responseAudio.play();
+
+      // Clear previous buttons and show next set
+      const currentResponseSet = button.parentElement;
+      currentResponseSet.classList.add('hidden');
+      const nextResponseSet = currentResponseSet.nextElementSibling;
+      if (nextResponseSet) {
+        nextResponseSet.classList.remove('hidden');
+      }
+    }
+
+    function sendFromInput() {
+      // Won't be used but leaving here for future :)
+      alert("u really thought that would work #rofl")
+    }
+
+    function goBack() {
+      window.history.back();
+    }
+
+    renderOptions(currentNode.options);
+  </script>
+</body>
+
+</html>

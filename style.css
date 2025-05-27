@@ -1,0 +1,488 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+/* Scroll Bar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffb6cc;
+  border-radius: 10px;
+}
+
+/* Nav-Bar Section */
+.y2k-navbar {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+h2 {
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 16px;
+  color: #660066;
+  text-shadow: 1px 1px #ffb6c1;
+  margin-top: 10px;
+  margin-bottom: 10px
+}
+
+h3{
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 16px;
+  color: #660066;
+  text-align: right;
+  text-shadow: 1px 1px #ffb6c1;
+  margin-top: 10px;
+  margin-bottom: 10px
+}
+
+p {
+  line-height: 130%;
+}
+
+/* Cursor *.bio */
+
+body {
+  background-image: url('images/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* House icon */
+.divider {
+  max-width: 38px;
+  height: auto;
+}
+
+/* glitter sparkle bar bg */
+.navbar-bg {
+  background: url('https://media2.giphy.com/media/ECWLeGxcKasCc/giphy.gif'); 
+  padding: 15px;
+  border: 4px double #ff66cc;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #ff99ff;
+  position: relative;
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+.pixel-heart {
+  height: 40px;
+  position: absolute;
+  top: 10px;
+}
+
+.left-heart {
+  left: 10px;
+}
+
+.right-heart {
+  right: 10px;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  z-index: 1;
+}
+
+.nav-link {
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 16px;
+  background: linear-gradient(to right, #ffc1f3, #ffb6c1, #ffc1f3);
+  color: #660066;
+  padding: 6px 12px;
+  border: 2px dotted #ff69b4;
+  border-radius: 12px;
+  text-decoration: none;
+  text-shadow: 1px 1px #fff0f5;
+  box-shadow: 2px 2px 5px #ff99cc;
+  transition: all 0.3s ease;
+  animation: bouncey 3s infinite;
+  cursor: url('https://www.rw-designer.com/cursor-view/94545.png'), pointer;
+}
+
+.nav-link:hover {
+  background: #fff0f5;
+  color: #ff1493;
+  transform: scale(1.1) rotate(-2deg);
+  text-shadow: 0 0 5px #ff00cc;
+  cursor: url('https://www.rw-designer.com/cursor-view/94545.png'), pointer;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px #ff99ff; }
+  50% { box-shadow: 0 0 35px #ff66cc; }
+}
+
+@keyframes bouncey {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+} 
+/* Profile Section */
+.profile-center {
+  background: #ffe6fa;
+  border: 3px dashed #ff66cc;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive;
+  color: #660066;
+  box-shadow: 0 0 15px #ff99cc;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
+.username {
+  font-size: 24px;
+  text-shadow: 1px 1px #ffb6c1;
+}
+
+.status {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.online {
+  color: limegreen;
+  font-weight: bold;
+}
+
+.buttons {
+  margin: 15px 0;
+}
+
+.button {
+  background: linear-gradient(#ffccff, #ff99cc);
+  border: 2px solid #ff66cc;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #660066;
+  font-weight: bold;
+  border-radius: 8px;
+  margin: 0 5px;
+  display: inline-block;
+  box-shadow: 2px 2px #ffb6c1;
+}
+
+.button:hover {
+  background: #fff0f5;
+  color: #cc0066;
+  cursor: url('https://www.rw-designer.com/cursor-view/94545.png'), pointer;
+}
+
+.bio {
+  margin-top: 10px;
+  font-size: 14px;
+  background: #fff0f5;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px dotted #ff99cc;
+}
+
+.divider {
+  margin-top: 15px;
+  width: 100%;
+}
+
+/*profile-attempt */
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat',sans-serif;
+  box-sizing: border-box;
+  cursor: url('https://www.rw-designer.com/cursor-view/94536.png'), default;
+}
+
+.container{
+  width: 100%;
+  min-height: 100vh;
+  background: #212121;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-card{
+  width: 90%;
+  max-width: 450px;
+  text-align: center;
+  background: #fff;
+  color: #333;
+}
+
+.cover-pic{
+  display: block;
+  width: 100%;
+}
+
+.profile-pic{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-top: -70px;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 0 0 0px #ff004f;
+  transition: box-shadow 0.5s;
+  cursor: url('https://www.rw-designer.com/cursor-view/94545.png'), pointer;
+}
+
+.profile-pic:hover{
+  box-shadow: 0 0 0 5px #ff004f
+}
+
+.profile-card h1{
+  font-weight: 600;
+}
+
+.follow-btn{
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid #ff004f;
+  color: #555;
+  padding: 6px 35px;
+  margin: 25px 0;
+  cursor: url('https://www.rw-designer.com/cursor-view/94545.png'), pointer;
+}
+.row{
+  display: flex;
+  justify-content: space-around; 
+}
+.row h2{
+  font-weight: 500;
+  font-size: 30px;
+}
+.view-btn{
+  display: inline-block;
+  text-decoration: none;
+  background: #cc0066;
+  color: #fff;
+  width: 100%;
+  padding: 15px 0;
+  margin-top: 20px;
+  cursor: url('https://www.rw-designer.com/cursor-view/94545.png'), pointer;
+}
+
+.box-left {
+  background: #ffe6fa;
+  border: 3px dashed #ff66cc;
+  padding: 20px;
+  text-align: left;
+  font-family: 'Comic Sans MS', cursive;
+  color: #660066;
+  box-shadow: 0 0 15px #ff99cc;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 15px;
+  position: absolute;
+  top: 65%;
+  left: 7%;
+}
+
+.box-right {
+  background: #ffe6fa;
+  border: 3px dashed #ff66cc;
+  padding: 20px;
+  text-align: right;
+  font-family: 'Comic Sans MS', cursive;
+  color: #660066;
+  box-shadow: 0 0 15px #ff99cc;
+  max-width: 320px;
+  margin: 0 auto;
+  border-radius: 15px;
+  position: absolute;
+  top: 65%;
+  right: 7%;
+}
+
+/* Javascript New Buttons 4 Profile */
+.message-btn, .see-posts-btn, .unfollow-btn {
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid #ff004f;
+  color: #555;
+  padding: 6px 35px;
+  margin: 10px;
+  transition:0.3s;
+  cursor: url('https://www.rw-designer.com/cursor-view/94545.png'), pointer;
+}
+.message-btn:hover, .see-posts-btn:hover {
+  background-color: #ff004f;
+  color: white;
+  cursor: url('https://www.rw-designer.com/cursor-view/94545.png'), pointer;
+}
+
+.bloglist {
+  background: #ffe6fa;
+  border: 3px dashed #ff66cc;
+  padding: 20px;
+  text-align: left;
+  font-family: 'Comic Sans MS', cursive;
+  color: #660066;
+  box-shadow: 0 0 15px #ff99cc;
+  margin: 0 auto;
+  border-radius: 15px;
+  max-width: 1000px;
+}
+
+.tip{
+  margin-top: 10px;
+  font-size: 14px;
+  background: #fff0f5;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px dotted #ff99cc;
+}
+
+.pfpmini{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-top: -70px;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 0 0 0px #ff004f;
+  transition: box-shadow 0.5s;
+  cursor: url('https://www.rw-designer.com/cursor-view/94545.png'), pointer;
+}
+
+.pfpmini:hover{
+  box-shadow: 0 0 0 3px #ff004f
+}
+
+.smallname {
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 16px;
+  color: #660066;
+  text-shadow: 1px 1px #ffb6c1;
+  cursor: url('https://www.rw-designer.com/cursor-view/94545.png'), pointer;
+}
+
+.bulletin {
+  background: #ffe6fa;
+  border: 3px dashed #ff66cc;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive;
+  color: #660066;
+  box-shadow: 0 0 15px #ff99cc;
+  width: 800px;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
+.cmt{
+  margin-top: 10px;
+  font-size: 14px;
+  background: #fff0f5;
+  padding: 10px;
+  border-radius: 10px;
+  border: 5px dotted #ff99cc;
+}
+
+h5 {
+  font-size: 20px;
+  color: #660066;
+  text-shadow: 1px 1px #ffb6c1;
+  margin-top: 10px;
+  margin-bottom: 10px
+}
+
+.msg {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+/* Emoji Reactions */
+
+.reactions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+  font-size: 0.95rem;
+  background-color: #fff0fb;
+  padding: 10px;
+  border: 2px dotted hotpink;
+  border-radius: 10px;
+}
+
+.emoji {
+  background-color: #ffe6f9;
+  border: 1px solid #ffb6c1;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: #6b006b;
+  box-shadow: 2px 2px 4px #ffccf9;
+}
+
+.emoji:hover {
+  background-color: #ffdaf4;
+  transform: rotate(-2deg) scale(1.1);
+  cursor: url('https://www.rw-designer.com/cursor-view/94545.png'), pointer;
+}
+
+/* Video for Bulletin */
+
+.bulletin-post {
+  background-color: #fff0f5;
+  padding: 15px;
+  border: 2px dashed #ff66cc;
+  border-radius: 20px;
+  width: 600px;
+  margin: 20px auto;
+  text-align: center;
+  font-family: "Comic Sans MS", cursive;
+  box-shadow: 0 0 10px #ffc0cb;
+}
+
+/* Guest Book */
+.guestbook {
+  background: #fff0f9;
+  border: 3px dashed #ff99cc;
+  padding: 20px;
+  border-radius: 15px;
+  width: 500px;
+  margin: 30px auto;
+  font-family: "Comic Sans MS", cursive;
+  color: #ff3399;
+  box-shadow: 0 0 15px #ffb6c1;
+}
+
+.note {
+  background: #ffe6f2;
+  border: 2px solid #ff66cc;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+button {
+  background: #ffccf9;
+  border: none;
+  padding: 10px 20px;
+  font-family: "Comic Sans MS", cursive;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #d60087;
+  box-shadow: 0 0 5px #ff99cc;
+}
+
+button:hover {
+  background: #ffd9f9;
+}
+
+a:hover {
+  cursor: url('https://www.rw-designer.com/cursor-view/94545.png'), pointer;
+}

@@ -1,0 +1,207 @@
+<!--- Done --->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@Sami_Sparklez's Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Share+Tech&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="/images/angelheart.png">
+</head>
+  
+<body>
+
+  <script>
+    function playButtonSound(){
+      var audio = new Audio('audio/button.mp3');
+      audio.play();
+    }
+  </script>
+
+        <!--- Nav-Bar Section --->
+        <div class="y2k-navbar">
+          <div class="navbar-bg">
+            <img src="images/logo.png"><br>
+            <img src="https://static.vecteezy.com/system/resources/previews/022/675/520/original/3d-home-icon-free-png.png" class="divider">
+            <div class="nav-links">
+              <a href="index.html" class="nav-link" onmouseover="playButtonSound()">✩ HOME ✩</a>
+              <a href="myprofile (copy).html" class="nav-link" onmouseover="playButtonSound()">♥ MY PROFILE ♥</a>
+              <a href="blogss.html" class="nav-link" onmouseover="playButtonSound()">✧ BLOGS ✧</a>
+              <a href="bulletin.html" class="nav-link" onmouseover="playButtonSound()">✿ BULLETIN ✿</a> 
+              <a href="note.html" class="nav-link" onmouseover="playButtonSound()">✩ NOTE ✩</a> 
+            </div>
+          </div>
+        </div>
+  
+<!--- Profile Card Section --->
+<div class="container">
+  <div class="profile-card">
+    <img src="images/profile_header.png" class="cover-pic">
+    <img src="images/profile_picture.png" class="profile-pic">
+    <h1 class="username">@Sami_Sparklez</h1>
+    <p class="status">currently: <span class="online">online</span></p>
+    <p>digital angel from the cyber seas of above... Welcome to my Heavenly Space!</p>
+
+    <div id="profile-actions">
+      <a href="#" class="follow-btn">Follow me</a>
+    </div>
+
+    <div class="row">
+      <div>
+        <p>Followers</p>
+        <h2 id="follower-count">128</h2>
+      </div>
+      <div>
+        <p>Following</p>
+        <h2>217</h2>
+      </div>
+      <div>
+        <p>Posts</p>
+        <h2>#</h2>
+      </div>
+    </div>
+
+    <a href="index.html" class="view-btn">VIEW PAGE</a>
+  </div>
+</div>
+
+<!--- JavaScript Section --->
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const profileActions = document.getElementById("profile-actions");
+    const followerCount = document.getElementById("follower-count");
+    
+    // Initialize follower count from localStorage or fallback to 128
+    let storedCount = localStorage.getItem("followerCount");
+    if (storedCount === null) {
+      storedCount = 128;  // default starting count
+    } else {
+      storedCount = Number(storedCount);
+    }
+    followerCount.textContent = storedCount;
+
+    // get follow status from localStorage
+    let isFollowing = localStorage.getItem("isFollowing") === "true";
+
+    function renderFollowState() {
+      if (isFollowing) {
+        renderUnfollowState();
+      } else {
+        renderFollowButton();
+      }
+    }
+
+    function renderFollowButton() {
+      profileActions.innerHTML = `<a href="#" class="follow-btn" >Follow</a>`;
+      document.querySelector(".follow-btn").addEventListener("click", handleFollow);
+    }
+
+    function renderUnfollowState() {
+      profileActions.innerHTML = `
+        <a href="#" class="unfollow-btn">Unfollow</a>
+        <a href="#" class="message-btn">📨 Message</a>
+        <a href="blogss" class="see-posts-btn">🌌 See Posts</a>
+      `;
+      document.querySelector(".unfollow-btn").addEventListener("click", handleUnfollow);
+      document.querySelector(".message-btn").addEventListener("click", function (e) {
+        e.preventDefault();
+        window.location.href = "messages.html";
+      });
+      document.querySelector(".see-posts-btn").addEventListener("click", function (e) {
+        e.preventDefault();
+        const btn = e.target;
+        btn.textContent = "✨ teleporting...";
+        setTimeout(() => {
+          window.location.href = "blogss.html";
+        }, 1000);
+      });
+    }
+
+    function handleFollow(e) {
+      e.preventDefault();
+      isFollowing = true;
+      localStorage.setItem("isFollowing", "true");
+
+      let count = parseInt(followerCount.textContent);
+      count += 1;
+      followerCount.textContent = count;
+      localStorage.setItem("followerCount", count);
+
+      showHeartBurst();
+      renderUnfollowState();
+    }
+
+    function handleUnfollow(e) {
+      e.preventDefault();
+      isFollowing = false;
+      localStorage.setItem("isFollowing", "false");
+
+      let count = parseInt(followerCount.textContent);
+      count = Math.max(0, count - 1);
+      followerCount.textContent = count;
+      localStorage.setItem("followerCount", count);
+
+      renderFollowButton();
+    }
+
+    function showHeartBurst() {
+      const burst = document.createElement("div");
+      burst.classList.add("heart-burst");
+      document.body.appendChild(burst);
+      setTimeout(() => burst.remove(), 1000);
+    }
+
+    // initialize follow state
+    renderFollowState();
+  });
+  </script>
+
+<!--- Style Fixes --->
+<style>
+/* ✧ fix background color showing up dark ✧ */
+.container {
+  background: rgba(255, 192, 203, 0.3); /* cute semi-white glass */
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  max-width: 700px;
+  margin: 40px auto;
+}
+
+/* for the burst effect */
+.heart-burst {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  animation: burst 1s ease-out forwards;
+  z-index: 9999;
+  pointer-events: none;
+}
+@keyframes burst {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5) rotate(0deg);
+  }
+  30% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.3) rotate(15deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8) rotate(-15deg);
+  }
+}
+.heart-burst::before {
+  content: "💖💫";
+}
+</style>
+
+</body>
+</html>
+

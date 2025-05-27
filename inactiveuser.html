@@ -1,0 +1,65 @@
+<!--- Done --->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inactive User</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Share+Tech&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="/images/angelheart.png">
+</head>
+  
+<body>
+
+  <script>
+    function playButtonSound(){
+      var audio = new Audio('audio/button.mp3');
+      audio.play();
+    }
+  </script>
+
+        <!--- Nav-Bar Section --->
+        <div class="y2k-navbar">
+          <div class="navbar-bg">
+            <img src="images/logo.png"><br>
+            <img src="https://static.vecteezy.com/system/resources/previews/022/675/520/original/3d-home-icon-free-png.png" class="divider">
+            <div class="nav-links">
+              <a href="index.html" class="nav-link" onmouseover="playButtonSound()">✩ HOME ✩</a>
+              <a href="myprofile (copy).html" class="nav-link" onmouseover="playButtonSound()">♥ MY PROFILE ♥</a>
+              <a href="blogss.html" class="nav-link" onmouseover="playButtonSound()">✧ BLOGS ✧</a>
+              <a href="bulletin.html" class="nav-link" onmouseover="playButtonSound()">✿ BULLETIN ✿</a> 
+              <a href="note.html" class="nav-link" onmouseover="playButtonSound()">✩ NOTE ✩</a> 
+            </div>
+          </div>
+        </div>
+  
+<!--- Profile Card Section --->
+<div class="container">
+  <div class="profile-card">
+    <img src="images/blank.png" class="profile-pic">
+    <h1 class="username">User Inactive ;(</h1><br>
+  </div>
+</div><br>
+
+
+<!--- Style Fixes --->
+<style>
+/* ✧ fix background color showing up dark ✧ */
+.container {
+  background: rgba(255, 192, 203, 0.3); /* cute semi-white glass */
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  max-width: 700px;
+  margin: 40px auto;
+}
+
+</style>
+
+</body>
+</html>
+

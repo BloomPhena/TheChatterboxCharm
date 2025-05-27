@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile</title>
+  <link rel="icon" type="image/x-icon" href="/images/angelheart.png">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: #fbeaff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .user-center {
+      max-width: 1000px;
+      margin: 120px auto 60px auto;
+      /* pulls everything down from navbar */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    .top-section {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      width: 100%;
+    }
+
+    .profile-box,
+    .activity-box,
+    .comments-box {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-box,
+    .activity-box {
+      flex: 1;
+      min-width: 300px;
+      max-width: 420px;
+    }
+
+    .profile-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .profile-box img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fface4;
+      margin-bottom: 15px;
+      margin-top: -30px;
+      background: #fff;
+    }
+
+    .username {
+      font-weight: 700;
+      font-size: 1.6em;
+      color: #b00074;
+      margin-bottom: 8px;
+    }
+
+    .follower-info {
+      display: flex;
+      gap: 20px;
+      font-size: 0.95em;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .follower-info span {
+      background: #ffe6f7;
+      padding: 6px 12px;
+      border-radius: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .bio {
+      font-size: 0.95em;
+      color: #444;
+      margin-top: 6px;
+    }
+
+    .activity-box h3 {
+      margin-bottom: 15px;
+      color: #b00074;
+      font-size: 1.2em;
+      text-align: center;
+    }
+
+    .activity-box ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .activity-box li {
+      padding: 10px 0;
+      border-bottom: 1px dashed #ccc;
+      font-size: 0.95em;
+    }
+
+    .comments-box {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .comments-box h3 {
+      margin-bottom: 12px;
+      color: #b00074;
+      font-size: 1.2em;
+    }
+
+    .comment {
+      background: #fff0f8;
+      padding: 12px 15px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    .comment p {
+      margin: 0;
+      font-size: 0.95em;
+    }
+
+    .comment-author {
+      font-weight: bold;
+      color: #b00074;
+    }
+
+    .reply {
+      margin-left: 20px;
+      margin-top: 6px;
+      padding: 8px 12px;
+      border-left: 2px dashed #ff8ac4;
+      color: #5c0053;
+      font-size: 0.95em;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+  <script>
+    function playButtonSound() {
+      var audio = new Audio('audio/button.mp3');
+      audio.play();
+    }
+  </script>
+
+  <!--- Nav-Bar Section --->
+  <div class="y2k-navbar">
+    <div class="navbar-bg">
+      <img src="images/logo.png"><br>
+      <img src="https://static.vecteezy.com/system/resources/previews/022/675/520/original/3d-home-icon-free-png.png"
+        class="divider">
+      <div class="nav-links">
+        <a href="index.html" class="nav-link" onmouseover="playButtonSound()">✩ HOME ✩</a>
+        <a href="myprofile (copy).html" class="nav-link" onmouseover="playButtonSound()">♥ MY PROFILE ♥</a>
+        <a href="blogss.html" class="nav-link" onmouseover="playButtonSound()">✧ BLOGS ✧</a>
+        <a href="bulletin.html" class="nav-link" onmouseover="playButtonSound()">✿ BULLETIN ✿</a>
+        <a href="note.html" class="nav-link" onmouseover="playButtonSound()">✩ NOTE ✩</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="user-center">
+
+    <div class="top-section">
+      <!-- ✩ Profile Info ✩ -->
+      <div class="profile-box">
+        <img src="images/pfp4ghoulz.png" alt="Profile Picture">
+        <h1 class="username">@kindabratzzy</h1>
+
+        <div class="follower-info">
+          <span><strong>98</strong> followers</span>
+          <span><strong>104</strong> following</span>
+        </div>
+
+        <p class="status">currently: <span class="online">online</span></p>
+        <div class="bio">i do follows and follow-backs!!<br>17 • smells like teen spirit... • nevada girl</div>
+      </div>
+
+      <!-- ✩ Activity Info ✩ -->
+      <div class="activity-box">
+        <h3>⊹ ࣪ ˖ Interests + Activity ࣪ ˖ ⊹</h3>
+        <ul>
+          <li>-`♡´- Interests: chit-chat!, animal care, glitter, and 90s brad pitt</li>
+          <li>★ Blogs: “how to up ur charm bracelets!”, “is anyone's mom...”</li>
+          <li>❀࿐ Bulletins: 2 active </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ✩ Comments ✩ -->
+    <div class="comments-box">
+      <h3>Comments 💬</h3>
+
+      <div class="comment">
+        <p><span class="comment-author">@gothbamsk8trgurl</span>: heeey welcome to chatterbox<3</p>
+      </div>
+
+      <div class="comment">
+        <p><span class="comment-author">@HannaCIDE</span>: wuzzup peeps 0-0</p>
+
+        <!-- reply from @kindabratzzy -->
+        <div class="reply">
+          <p>↳ <span class="comment-author">@kindabratzzy</span>: heyy grlfrendd!!</p>
+        </div>
+      </div>
+    </div
+
+    <br>
+    <br>
+
+  </div>
+</body>
+
+</html>

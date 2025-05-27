@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Home</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/x-icon" href="/images/angelheart.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    /* Loading Screen Styles */
+    #loading-screen {
+      position: fixed;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 14px;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #fbeaff;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: opacity 0.8s ease;
+    }
+
+    #loading-screen p {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 20px;
+    }
+
+    .loader-content {
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .loader-icon {
+      width: 70px;
+      height: 70px;
+      animation: spin 3s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ✩ Loading Screen ✩ -->
+  <div id="loading-screen">
+    <div class="loader-content">
+      <img src="images/angelheart.png" alt="Loading Icon" class="loader-icon" />
+      <p>~ loading The Chatterbox... 💾 ~</p>
+    </div>
+  </div>
+
+  <!-- Nav-Bar Section -->
+  <div class="y2k-navbar">
+    <div class="navbar-bg">
+      <img src="images/logo.png" /><br />
+      <img src="https://static.vecteezy.com/system/resources/previews/022/675/520/original/3d-home-icon-free-png.png"
+        class="divider" />
+      <div class="nav-links">
+        <a href="index.html" class="nav-link" onmouseover="playButtonSound()">✩ HOME ✩</a>
+        <a href="myprofile (copy).html" class="nav-link" onmouseover="playButtonSound()">♥ MY PROFILE ♥</a>
+        <a href="blogss.html" class="nav-link" onmouseover="playButtonSound()">✧ BLOGS ✧</a>
+        <a href="bulletin.html" class="nav-link" onmouseover="playButtonSound()">✿ BULLETIN ✿</a>
+        <a href="note.html" class="nav-link" onmouseover="playButtonSound()">✩ NOTE ✩</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Latest blog -->
+  <div class="box-left">
+    <h1>Latest Blog („• ֊ •„)♡ </h1>
+    <h3>[July 7, 2025 at 3:47 pm]</h3>
+    <h1>IT'S BEEN AWHILE!...old friends⁭</h1> <br>
+    <a class="smallname" href="samiprofile.html" onmouseover="playSami()"> <img src="images/profile_picture.png"
+        class="pfpmini"> @Sami_Sparklez</a>
+    <h2>mood | excited ₍₍⚞(˶˃ ᵕ ˂˶)⚟⁾</h2> <br>
+    <p>OMG? It’s been so long since I logged into this. I finally remembered my password after misplacing it somewhere
+      many years ago. The world has changed so much. People don't even BLOG anymore!! AP Research is truly a class I
+      will never forget. It has prepared me so much for my future endeavors in college as well as in my career where my
+      boss is always nagging me for reports bi-weekly. Despite all my worries, I got a qualifying score on my exam! My
+      friends are also doing extremely well too! As a matter of fact, we all went on a girls trip pretty recently to
+      Turkey. I became a journalist, like I wanted to 18 years ago. Gale became a newscaster. I see her on the news all
+      the time whenever I turn on the TV in the mornings. Tieran recently won an award for best animated feature, and
+      Sandra owns her own art therapy practitioner (it was featured in top 10 best up-coming businesses this year!).
+      Tahsin became an award-winning novelist for her autobiography. Lastly, Julika became a travel influencer with a
+      large following on social media! <br><br> - XoXo Sami
+    </p>
+    <div class="tip">
+      <h2>٩ (ˊᗜˋ )✧ AP Research Survival Tip:</h2>
+      <p><i>Reflect on your work and be proud of yourself :)</i></p>
+    </div><br>
+    <p><strong>Navigate to "BLOGS" to view comments.</strong>
+  </div> 
+
+  <div class="box-right">
+    <h1>𓆩♡𓆪 Past Blogs</h1>
+    <div class="cmt">
+      <a href="blogss.html">
+        <p>
+          <h2>THE CURE ? ( ꩜ ᯅ ꩜)</h2>You guys are never going to believe what just happened… So as you guys know,
+          everyone in my class has officially turned dead on the inside...⁭
+        </p>
+      </a>
+    </div>
+    <div class="cmt">
+      <a href="blogss.html">
+        <p>
+          <h2>PRESENTATION DAY (╥﹏╥)</h2>AAAHHH!! It's presentation day. Although I practiced plenty of times, I'm still
+          nervous about my presentation. What if I make a mistake...⁭
+        </p>
+      </a>
+    </div>
+
+    <div class="cmt">
+      <a href="blogss.html">
+        <p>
+          <h2>IT'S ALMOST THE DAY…</h2>It feels like I've been practicing all day, and all night! I could practically
+          present with my eyes closed (maybe.. not quite) (o_o). Anyways, I should probably pick out an...⁭
+        </p>
+      </a>
+    </div>
+  </div>
+
+  <!-- Audio Elements (separate from nav button sounds) -->
+  <audio id="loading-music" src="audio/loadingscreen.mp3"></audio>
+
+  <!-- Scripts -->
+  <script>
+    // Button hover sound – leave her alone, she's perfect.
+    function playButtonSound() {
+      var audio = new Audio('audio/button.mp3');
+      audio.play();
+    }
+
+    // ✨ Brand new function just for loading screen music
+    function playLoadingMusic() {
+      const loadingAudio = document.getElementById('loading-music');
+      loadingAudio.play().catch((err) => {
+        console.warn('User interaction required for autoplay:', err);
+      });
+    }
+
+    // Trigger loading screen behavior ONCE on page load
+    window.addEventListener('DOMContentLoaded', function () {
+      const loader = document.getElementById('loading-screen');
+
+      playLoadingMusic(); // only plays ONCE when entering the site
+
+      // Fade out and remove loader after 2 sec
+      setTimeout(() => {
+        loader.style.opacity = '0';
+        loader.style.pointerEvents = 'none';
+        setTimeout(() => {
+          loader.style.display = 'none';
+        }, 800);
+      }, 2000); // Loading duration
+    });
+  </script>
+</body>
+
+</html>
